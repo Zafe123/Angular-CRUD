@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-emp-add-edit',
   templateUrl: './emp-add-edit.component.html',
   styleUrls: ['./emp-add-edit.component.scss']
 })
+
 export class EmpAddEditComponent {
 
   education: string[] = [
@@ -37,6 +38,8 @@ export class EmpAddEditComponent {
       console.log(this.empForm.value);
     }
   }
+
+
 
 
 }
