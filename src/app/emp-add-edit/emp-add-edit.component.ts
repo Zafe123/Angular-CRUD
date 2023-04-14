@@ -28,9 +28,15 @@ export class EmpAddEditComponent {
       education: '',
       company: '',
       experience: '',
-      package: '',
+      salary: '',
 
     })
   }
+  onFormSubmit() {
+    if (this.empForm.valid) {
+      console.log(this.empForm.value);
+    }
+  }
+
 
 }
