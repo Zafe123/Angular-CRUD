@@ -18,40 +18,16 @@
   },
   "employees": [
     {
-      "firstName": "asdasdasd",
-      "lasttName": "adssadasd",
-      "email": "adsad@yahoo.com",
-      "dob": "2023-04-01T16:00:00.000Z",
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "testuser@gmail.com",
+      "dob": "2023-04-15T16:00:00.000Z",
       "gender": "male",
-      "education": "Vocational",
-      "company": "asdasd",
-      "experience": "aaaaa",
-      "salary": 4545456,
+      "education": "Docotorate",
+      "company": "Johndoe",
+      "experience": "4 months",
+      "salary": 25000,
       "id": 1
-    },
-    {
-      "firstName": "asdas",
-      "lasttName": "dasdas",
-      "email": "asd@yahoo.com",
-      "dob": "2023-04-02T16:00:00.000Z",
-      "gender": "male",
-      "education": "College Graduate",
-      "company": "asdas",
-      "experience": "asdasd",
-      "salary": 4,
-      "id": 2
-    },
-    {
-      "firstName": "Kim",
-      "lastName": "Sueno",
-      "email": "Kimsueno@gmail.com",
-      "dob": "2023-04-01T16:00:00.000Z",
-      "gender": "female",
-      "education": "High-school",
-      "company": "WNS",
-      "experience": "6 Months",
-      "salary": 20000,
-      "id": 3
     }
   ]
 }
