@@ -3,7 +3,7 @@
 </div>
 <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
-        <button color="warn" class="closeButton" mat-icon-button (click)="closeForm()">
+        <button color="warn" type="button" class="closeButton" mat-icon-button (click)="closeForm()">
             <mat-icon>close</mat-icon>
         </button>
         <div class="row">
@@ -65,6 +65,6 @@
     </div>
     <div mat-dialog-actions class="action">
         <button mat-raised-button type="reset">Clear</button>
-        <button mat-raised-button color="accent" type="submit">Save</button>
+        <button mat-raised-button color="accent" type="submit">{{data ? 'Update': 'Save'}}</button>
     </div>
 </form>

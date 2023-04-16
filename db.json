@@ -16,18 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "employees": [
-    {
-      "firstName": "Test",
-      "lastName": "User",
-      "email": "testuser@gmail.com",
-      "dob": "2023-04-15T16:00:00.000Z",
-      "gender": "male",
-      "education": "Docotorate",
-      "company": "Johndoe",
-      "experience": "4 months",
-      "salary": 25000,
-      "id": 1
-    }
-  ]
+  "employees": []
 }
