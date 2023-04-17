@@ -28,6 +28,18 @@
       "experience": "4 Years",
       "salary": 44555,
       "id": 1
+    },
+    {
+      "firstName": "Kims",
+      "lastName": "Zafe",
+      "email": "johntest@gmail.com",
+      "dob": "2023-04-16T16:00:00.000Z",
+      "gender": "female",
+      "education": "College Graduate",
+      "company": "Egul",
+      "experience": "10 years",
+      "salary": 20000,
+      "id": 2
     }
   ]
 }
