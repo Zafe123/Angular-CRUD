@@ -6,7 +6,6 @@ import { OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CoreService } from './core/core.service';
 import Swal from 'sweetalert2';
 
 
@@ -17,7 +16,19 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'dob', 'gender', 'education', 'company', 'experience', 'salary', 'action',];
+  displayedColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'email',
+    'dob',
+    'gender',
+    'education',
+    'company',
+    'experience',
+    'salary',
+    'action',
+  ];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -25,9 +36,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _dialog: MatDialog,
-    private _empService: EmployeeService,
-    private _coreService: CoreService,
-
+    private _empService: EmployeeService
   ) { }
 
 
@@ -66,18 +75,6 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
-  // deleteEmployee(id: number) {
-  //   this._empService.deleteEmployee(id).subscribe({
-  //     next: (res) => {
-  //       this._coreService.openSnackBar('Employee deleted successfully', 'done')
-  //       this.getEmployeeList();
-  //     },
-  //     error: console.log
-  //   })
-  // }
-
 
   openEditForm(data: any) {
     const dialogRef = this._dialog.open(EmpAddEditComponent, {

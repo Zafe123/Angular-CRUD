@@ -4,6 +4,7 @@ import { EmployeeService } from '../services/employee.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { OnInit, Inject } from '@angular/core';
 import { CoreService } from '../core/core.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-emp-add-edit',
@@ -47,15 +48,23 @@ export class EmpAddEditComponent implements OnInit {
   ngOnInit(): void {
     this.empForm.patchValue(this.data);
   }
+
+  successNotification() {
+    Swal.fire('Success', 'Employee Added Successfully', 'success');
+  }
+  updateNotification() {
+    Swal.fire('Success', 'Employee Updated Successfully', 'success');
+  }
+
+
+
   onFormSubmit() {
     if (this.empForm.valid) {
       if (this.data) {
         this._empService.updateEmployee(this.data.id, this.empForm.value).subscribe({
           next: (val: any) => {
-
-            this._coreService.openSnackBar('Employee updated successfully')
+            this.updateNotification();
             this._dialogRef.close(true);
-
           },
           error: (err: any) => {
             console.error(err)
@@ -65,16 +74,14 @@ export class EmpAddEditComponent implements OnInit {
         this._empService.addEmployee(this.empForm.value).subscribe({
           next: (val: any) => {
 
-            this._coreService.openSnackBar('Employee added successfully', 'done')
+            this.successNotification();
             this._dialogRef.close(true);
-
           },
           error: (err) => {
             console.error(err)
           },
         });
       }
-
     }
   }
 
