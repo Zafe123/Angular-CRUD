@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from './core/core.service';
+import { NgConfirmService } from 'ng-confirm-box';
 
 
 @Component({
@@ -25,7 +26,8 @@ export class AppComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _empService: EmployeeService,
-    private _coreService: CoreService
+    private _coreService: CoreService,
+    private _confirmService: NgConfirmService
 
   ) { }
 
@@ -65,15 +67,19 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
   deleteEmployee(id: number) {
-    this._empService.deleteEmployee(id).subscribe({
-      next: (res) => {
-        this._coreService.openSnackBar('Employee deleted successfully', 'done')
-        this.getEmployeeList();
+    this._confirmService.showConfirm("Are you sure want to Delete the record?",
+      () => {
+        this._empService.deleteEmployee(id).subscribe({
+          next: (res) => {
+            this._coreService.openSnackBar('Employee deleted successfully', 'done')
+            this.getEmployeeList();
+          },
+          error: console.log
+        })
       },
-      error: console.log
-    })
+      () => { }
+    );
   }
 
   openEditForm(data: any) {

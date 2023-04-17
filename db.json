@@ -16,5 +16,18 @@
   "profile": {
     "name": "typicode"
   },
-  "employees": []
+  "employees": [
+    {
+      "firstName": "Test ",
+      "lastName": "Edit",
+      "email": "testedit@gmail.com",
+      "dob": "2023-04-16T16:00:00.000Z",
+      "gender": "male",
+      "education": "College Graduate",
+      "company": "Google",
+      "experience": "4 Years",
+      "salary": 44555,
+      "id": 1
+    }
+  ]
 }
