@@ -7,7 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from './core/core.service';
-import { NgConfirmService } from 'ng-confirm-box';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
     private _dialog: MatDialog,
     private _empService: EmployeeService,
     private _coreService: CoreService,
-    private _confirmService: NgConfirmService
 
   ) { }
 
@@ -67,20 +66,18 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  deleteEmployee(id: number) {
-    this._confirmService.showConfirm("Are you sure want to Delete the record?",
-      () => {
-        this._empService.deleteEmployee(id).subscribe({
-          next: (res) => {
-            this._coreService.openSnackBar('Employee deleted successfully', 'done')
-            this.getEmployeeList();
-          },
-          error: console.log
-        })
-      },
-      () => { }
-    );
-  }
+
+
+  // deleteEmployee(id: number) {
+  //   this._empService.deleteEmployee(id).subscribe({
+  //     next: (res) => {
+  //       this._coreService.openSnackBar('Employee deleted successfully', 'done')
+  //       this.getEmployeeList();
+  //     },
+  //     error: console.log
+  //   })
+  // }
+
 
   openEditForm(data: any) {
     const dialogRef = this._dialog.open(EmpAddEditComponent, {
@@ -93,6 +90,34 @@ export class AppComponent implements OnInit {
           this.getEmployeeList();
         }
       },
+    });
+  }
+
+  tinyAlert() {
+    Swal.fire('Hey there!');
+  }
+  successNotification() {
+    Swal.fire('Hi', 'We have been informed!', 'success');
+  }
+
+  deleteEmployee(id: number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Submit',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.value) {
+        this._empService.deleteEmployee(id).subscribe({
+          next: (res) => {
+            this.getEmployeeList();
+          },
+          error: console.log
+        })
+        Swal.fire('Removed!', 'Employee removed successfully.', 'success');
+      }
     });
   }
 
