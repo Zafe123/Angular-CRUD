@@ -18,28 +18,16 @@
   },
   "employees": [
     {
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "johndoe@gmail.com",
-      "dob": "2023-04-18T16:00:00.000Z",
-      "gender": "male",
-      "education": "College Graduate",
-      "company": "Google",
-      "experience": "4 Years",
-      "salary": 546546,
-      "id": 1
-    },
-    {
-      "firstName": "Kim",
-      "lastName": "Testing",
-      "email": "testingzx123@yahoo.com",
-      "dob": "2023-04-08T16:00:00.000Z",
+      "firstName": "Gustavo Fring",
+      "lastName": "Fring",
+      "email": "gusfring@gmail.com",
+      "dob": "2023-03-31T16:00:00.000Z",
       "gender": "male",
       "education": "High-school",
-      "company": "Google",
-      "experience": "5 years",
-      "salary": 456546,
-      "id": 2
+      "company": "Los pollos",
+      "experience": "20 years",
+      "salary": 999999999,
+      "id": 1
     }
   ]
 }
