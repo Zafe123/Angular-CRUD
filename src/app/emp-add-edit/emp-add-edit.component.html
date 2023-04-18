@@ -30,13 +30,17 @@
             </mat-form-field>
         </div>
         <div class="row">
-            <mat-radio-group aria-label="Select an option" formControlName="gender" checked required>
+            <mat-radio-group aria-label="Select an option" formControlName="gender" required>
                 <mat-label><b>Gender</b></mat-label>
                 <mat-radio-button value="male">Male</mat-radio-button>
                 <mat-radio-button value="female">Female</mat-radio-button>
                 <mat-radio-button value="others">Others</mat-radio-button>
+                <mat-error *ngIf="formSubmitted && empForm.controls['gender'].invalid">Gender is required</mat-error>
             </mat-radio-group>
+
         </div>
+
+
 
         <div class="row">
             <mat-form-field appearance="outline">
@@ -64,7 +68,10 @@
         </div>
     </div>
     <div mat-dialog-actions class="action">
-        <button mat-raised-button type="reset">Clear</button>
+        <button mat-raised-button type="reset" (click)="clearForm()">Clear</button>
         <button mat-raised-button color="accent" type="submit">{{data ? 'Update': 'Save'}}</button>
+
     </div>
+
+
 </form>
