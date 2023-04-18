@@ -18,28 +18,28 @@
   },
   "employees": [
     {
-      "firstName": "Kims",
-      "lastName": "Zafe",
-      "email": "johntest@gmail.com",
-      "dob": "2023-04-16T16:00:00.000Z",
-      "gender": "female",
-      "education": "Vocational",
-      "company": "EPIC",
-      "experience": "10 years",
-      "salary": 20000,
-      "id": 2
-    },
-    {
       "firstName": "John",
       "lastName": "Doe",
       "email": "johndoe@gmail.com",
-      "dob": "2023-04-17T16:00:00.000Z",
+      "dob": "2023-04-18T16:00:00.000Z",
       "gender": "male",
       "education": "College Graduate",
       "company": "Google",
-      "experience": "4 years",
-      "salary": 15555,
-      "id": 3
+      "experience": "4 Years",
+      "salary": 546546,
+      "id": 1
+    },
+    {
+      "firstName": "Kim",
+      "lastName": "Testing",
+      "email": "testingzx123@yahoo.com",
+      "dob": "2023-04-08T16:00:00.000Z",
+      "gender": "male",
+      "education": "High-school",
+      "company": "Google",
+      "experience": "5 years",
+      "salary": 456546,
+      "id": 2
     }
   ]
 }

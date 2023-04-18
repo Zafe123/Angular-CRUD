@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgConfirmModule } from 'ng-confirm-box';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { EmployeedashboardComponent } from './employeedashboard/employeedashboard.component';
 
 
 
@@ -39,7 +40,8 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent,
     EmpAddEditComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    EmployeedashboardComponent
   ],
   imports: [
     BrowserModule,
