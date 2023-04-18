@@ -21,6 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgConfirmModule } from 'ng-confirm-box';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -35,7 +37,9 @@ import { NgConfirmModule } from 'ng-confirm-box';
 @NgModule({
   declarations: [
     AppComponent,
-    EmpAddEditComponent
+    EmpAddEditComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
