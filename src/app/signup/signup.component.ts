@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { matchpassword } from './matchpassword.validator';
-import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -61,21 +60,18 @@ export class SignupComponent implements OnInit {
     this.formSubmitted = true;
     if (this.signupForm.valid) {
       this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
-        .pipe(
-          tap(res => {
+        .subscribe({
+          next: (res) => {
             alert("Signup Successful");
             this.signupForm.reset();
             this.formSubmitted = false;
             this.router.navigate(['login']);
-          })
-        )
-        .subscribe({
-          error: err => {
-            alert("Something went Wrong")
+          },
+          error: (err) => {
+            alert("Something Went Wrong");
           }
-        });
+        })
     }
   }
-
 
 }

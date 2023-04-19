@@ -28,29 +28,33 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   login() {
-    this.http.get<any>("http://localhost:3000/signupUsers").subscribe(res => {
-      const user = res.find((a: any) => {
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+    this.http.get<any>("http://localhost:3000/signupUsers")
+      .subscribe({
+        next: (res) => {
+          const user = res.find((a: any) => {
+            return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+          });
+          if (user) {
+            alert("Login Success");
+            this.loginForm.reset();
+            this.router.navigate(['dashboard'])
+          } else {
+            alert("User not Found");
+          }
+        },
+        error: (err) => {
+          alert('Something Went Wrong')
+        }
       });
-      if (user) {
-        alert("Login Success");
-        this.loginForm.reset();
-        this.router.navigate(['dashboard'])
-      }
-      else {
-        alert("User not Found");
-      }
-    }, err => alert('Something Went Wrong'))
   }
+
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a value';
+      return 'Invalid Email';
     }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    return '';
   }
 
 }

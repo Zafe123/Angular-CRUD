@@ -8,7 +8,7 @@
             <h2 class="email">Email</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your email</mat-label>
-                <input formControlName="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+                <input formControlName="email" matInput placeholder="pat@example.com" [email]="true" required>
                 <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
 
