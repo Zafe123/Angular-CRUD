@@ -39,60 +39,46 @@
       "id": 1
     },
     {
-      "fullname": "John Doe",
-      "email": "",
-      "password": "123456",
-      "confirmpassword": "123456",
+      "fullname": "Joshua",
+      "email": "asdasd@gmail.com",
+      "password": "asdsadsa",
+      "confirmpassword": "123123",
       "id": 2
     },
     {
-      "fullname": "Testing",
-      "email": "",
-      "password": "1234567",
-      "confirmpassword": "1234567",
+      "fullname": "joshua",
+      "email": "123@gmail.com",
+      "password": "asdasd",
+      "confirmpassword": "asdasd",
       "id": 3
     },
     {
-      "fullname": "",
-      "email": "",
-      "password": "",
-      "confirmpassword": "",
+      "fullname": "asdasdas",
+      "email": "dasasd@gmail.com",
+      "password": "123123123",
+      "confirmpassword": "asdasdasd",
       "id": 4
     },
     {
-      "fullname": "",
-      "email": "",
-      "password": "",
-      "confirmpassword": "",
+      "fullname": "Joshua Zafe",
+      "email": "pat@gmail.com",
+      "password": "123123",
+      "confirmpassword": "sadasdasdasd",
       "id": 5
     },
     {
-      "fullname": "",
-      "email": "",
-      "password": "",
-      "confirmpassword": "",
+      "fullname": "Joshua Amiel",
+      "email": "213123@gmail.com",
+      "password": "asdasdasd",
+      "confirmpassword": "asdasdsad123",
       "id": 6
     },
     {
-      "fullname": "",
-      "email": "",
-      "password": "asdasd",
-      "confirmpassword": "",
+      "fullname": "@Gmail.com",
+      "email": "123@gmail.com",
+      "password": "asdasdads",
+      "confirmpassword": "asdasd",
       "id": 7
-    },
-    {
-      "fullname": "John ",
-      "email": "adasdsad@gmail.com",
-      "password": "123456",
-      "confirmpassword": "123456",
-      "id": 8
-    },
-    {
-      "fullname": "John Doe",
-      "email": "pat@gmail.com",
-      "password": "1234567",
-      "confirmpassword": "1234567",
-      "id": 9
     }
   ]
 }

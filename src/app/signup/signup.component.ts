@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { matchpassword } from './matchpassword.validator';
+
 
 @Component({
   selector: 'app-signup',
@@ -10,25 +12,32 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  public signupForm!: FormGroup;
+  public signupForm: FormGroup;
   public formSubmitted = false;
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl(null, [Validators.required]);
+  confirmpassword = new FormControl(null, [Validators.required]);
+
 
   constructor(private _formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
 
-  }
-
-  ngOnInit(): void {
     this.signupForm = this._formBuilder.group({
       fullname: [''],
       email: [''],
       password: [''],
       confirmpassword: ['']
+    }, {
+      validators: matchpassword
     })
+
   }
+
+  ngOnInit(): void { }
   hide = true;
 
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -36,6 +45,15 @@ export class SignupComponent implements OnInit {
     }
     return '';
   }
+
+  getpasswordErrorMessage() {
+    if (this.confirmpassword.hasError('required')) {
+      return 'Password should be same';
+    }
+    return '';
+  }
+
+
   signup() {
     this.formSubmitted = true;
     if (this.signupForm.valid) {
@@ -50,4 +68,6 @@ export class SignupComponent implements OnInit {
         })
     }
   }
+
+
 }

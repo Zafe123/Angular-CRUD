@@ -26,7 +26,7 @@
             <h2 class="email">Password</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your password</mat-label>
-                <input formControlName="password" required matInput [type]="hide ? 'password' : 'text'">
+                <input type="password" formControlName="password" required matInput [type]="hide ? 'password' : 'text'">
                 <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -36,15 +36,18 @@
             <h2 class="email"> Confirm Password</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Confirm your password</mat-label>
-                <input formControlName="confirmpassword" required matInput [type]="hide ? 'password' : 'text'">
+                <input type="password" formControlName="confirmpassword" required matInput
+                    [type]="hide ? 'password' : 'text'">
                 <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
+                <mat-error *ngIf="confirmpassword.invalid">{{getpasswordErrorMessage()}}</mat-error>
             </mat-form-field>
+
         </div>
         <mat-card-actions class="buttons">
-            <button mat-stroked-button color="primary" type="submit">Register</button>
+            <button mat-stroked-button color="primary" type="submit" [disabled]="signupForm.invalid">Register</button>
             <button mat-stroked-button color="warn" class="clear" type="reset">Clear</button>
         </mat-card-actions>
     </form>
