@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -36,11 +37,11 @@ export class LoginComponent implements OnInit {
             return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
           });
           if (user) {
-            alert("Login Success");
+            this.successNotification();
             this.loginForm.reset();
             this.router.navigate(['dashboard'])
           } else {
-            alert("User not Found");
+            this.userNotification();
           }
         },
         error: (err) => {
@@ -49,6 +50,19 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  successNotification() {
+    Swal.fire('Hi', 'Login Success', 'success');
+  }
+
+  userNotification() {
+    Swal.fire({
+      title: '<strong>User not Found</strong>',
+      icon: 'info',
+      focusConfirm: false,
+      confirmButtonText:
+        'OK'
+    })
+  }
 
   getErrorMessage() {
     if (this.email.hasError('required')) {

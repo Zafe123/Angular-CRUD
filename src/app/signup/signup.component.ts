@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup, FormBuilder, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { matchpassword } from './matchpassword.validator';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -56,13 +57,14 @@ export class SignupComponent implements OnInit {
   }
 
 
+
   signup() {
     this.formSubmitted = true;
     if (this.signupForm.valid) {
       this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
         .subscribe({
           next: (res) => {
-            alert("Signup Successful");
+            this.successNotification(); // 
             this.signupForm.reset();
             this.formSubmitted = false;
             this.router.navigate(['login']);
@@ -72,6 +74,10 @@ export class SignupComponent implements OnInit {
           }
         })
     }
+  }
+
+  successNotification() {
+    Swal.fire('Hi', 'Signup Successful', 'success');
   }
 
 }

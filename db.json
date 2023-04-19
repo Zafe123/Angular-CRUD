@@ -72,6 +72,20 @@
       "password": "123",
       "confirmpassword": "123",
       "id": 6
+    },
+    {
+      "fullname": "joshua",
+      "email": "testing@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "id": 7
+    },
+    {
+      "fullname": "Joshua",
+      "email": "testing@yahoo.com",
+      "password": "12345",
+      "confirmpassword": "12345",
+      "id": 8
     }
   ]
 }
