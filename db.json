@@ -32,53 +32,39 @@
   ],
   "signupUsers": [
     {
-      "fullname": "John doe",
-      "email": "",
-      "password": "123456789",
-      "confirmpassword": "123456789",
+      "fullname": "John Doe",
+      "email": "pat@example.com",
+      "password": "12345",
+      "confirmpassword": "12345",
       "id": 1
     },
     {
-      "fullname": "Joshua",
-      "email": "asdasd@gmail.com",
-      "password": "asdsadsa",
-      "confirmpassword": "123123",
+      "fullname": "John Doe",
+      "email": "johndoe@gmail.com",
+      "password": "12345",
+      "confirmpassword": "12345",
       "id": 2
     },
     {
-      "fullname": "joshua",
-      "email": "123@gmail.com",
-      "password": "asdasd",
-      "confirmpassword": "asdasd",
+      "fullname": "Testing Account",
+      "email": "testing@gmail.com",
+      "password": "12345",
+      "confirmpassword": "12345",
       "id": 3
     },
     {
-      "fullname": "asdasdas",
-      "email": "dasasd@gmail.com",
-      "password": "123123123",
-      "confirmpassword": "asdasdasd",
+      "fullname": "Joshua ",
+      "email": "pat@gmail.com",
+      "password": "testing",
+      "confirmpassword": "testing",
       "id": 4
     },
     {
-      "fullname": "Joshua Zafe",
-      "email": "pat@gmail.com",
-      "password": "123123",
-      "confirmpassword": "sadasdasdasd",
+      "fullname": "John",
+      "email": "john@gmail.com",
+      "password": "12345",
+      "confirmpassword": "12345",
       "id": 5
-    },
-    {
-      "fullname": "Joshua Amiel",
-      "email": "213123@gmail.com",
-      "password": "asdasdasd",
-      "confirmpassword": "asdasdsad123",
-      "id": 6
-    },
-    {
-      "fullname": "@Gmail.com",
-      "email": "123@gmail.com",
-      "password": "asdasdads",
-      "confirmpassword": "asdasd",
-      "id": 7
     }
   ]
 }

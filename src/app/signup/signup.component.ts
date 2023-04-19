@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { matchpassword } from './matchpassword.validator';
+import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { matchpassword } from './matchpassword.validator';
 })
 export class SignupComponent implements OnInit {
 
-  public signupForm: FormGroup;
+  public signupForm!: FormGroup;
   public formSubmitted = false;
 
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -22,6 +23,10 @@ export class SignupComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
 
+
+  }
+
+  ngOnInit(): void {
     this.signupForm = this._formBuilder.group({
       fullname: [''],
       email: [''],
@@ -32,8 +37,6 @@ export class SignupComponent implements OnInit {
     })
 
   }
-
-  ngOnInit(): void { }
   hide = true;
 
 
@@ -58,14 +61,19 @@ export class SignupComponent implements OnInit {
     this.formSubmitted = true;
     if (this.signupForm.valid) {
       this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
-        .subscribe(res => {
-          alert("Signup Successful");
-          this.signupForm.reset();
-          this.formSubmitted = false;
-          this.router.navigate(['login']);
-        }, err => {
-          alert("Something went Wrong")
-        })
+        .pipe(
+          tap(res => {
+            alert("Signup Successful");
+            this.signupForm.reset();
+            this.formSubmitted = false;
+            this.router.navigate(['login']);
+          })
+        )
+        .subscribe({
+          error: err => {
+            alert("Something went Wrong")
+          }
+        });
     }
   }
 

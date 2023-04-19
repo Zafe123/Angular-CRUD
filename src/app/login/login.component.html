@@ -3,19 +3,19 @@
         <div mat-card-avatar class="example-header-image"></div>
         <h1 class="login">LOGIN PAGE</h1>
     </mat-card-header>
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="example-container">
             <h2 class="email">Email</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                <input formControlName="email" matInput placeholder="pat@example.com" [formControl]="email" required>
                 <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
 
             <h2 class="email">Password</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your password</mat-label>
-                <input required matInput [type]="hide ? 'password' : 'text'">
+                <input formControlName="password" required matInput [type]="hide ? 'password' : 'text'">
                 <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
