@@ -26,20 +26,8 @@
       "education": "High-school",
       "company": "Los pollos",
       "experience": "20 years",
-      "salary": 999999999,
+      "salary": 1,
       "id": 1
-    },
-    {
-      "firstName": "Test ",
-      "lastName": "edit",
-      "email": "testedit@gmail.com",
-      "dob": "2023-04-18T16:00:00.000Z",
-      "gender": "male",
-      "education": "College Graduate",
-      "company": "Google",
-      "experience": "123",
-      "salary": 2000,
-      "id": 2
     }
   ]
 }

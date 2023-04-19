@@ -24,6 +24,12 @@ import { NgConfirmModule } from 'ng-confirm-box';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmployeedashboardComponent } from './employeedashboard/employeedashboard.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+
+
 
 
 
@@ -63,7 +69,10 @@ import { EmployeedashboardComponent } from './employeedashboard/employeedashboar
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    NgConfirmModule
+    NgConfirmModule,
+    MatCardModule,
+    MatDividerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

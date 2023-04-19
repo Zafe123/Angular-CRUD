@@ -1,0 +1,32 @@
+.example-card {
+    max-width: 400px;
+    margin: 100px auto 0;
+
+}
+
+.example-header-image {
+    background-image: url('https://e7.pngegg.com/pngimages/547/205/png-clipart-circle-font-circle-purple-violet.png');
+    background-size: cover;
+}
+
+.login {
+    margin: 0 auto 0;
+    font-size: 40px;
+    font-style: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.email {
+    margin-left: 20px;
+}
+
+
+mat-form-field {
+    margin-left: 20px;
+    width: 90%;
+}
+
+.clear {
+    margin-left: 10px;
+}
