@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
 
+
+export class EmployeeService {
   constructor(private _http: HttpClient) { }
 
   addEmployee(data: any): Observable<any> {
@@ -29,4 +30,6 @@ export class EmployeeService {
   deleteEmployee(id: number): Observable<any> {
     return this._http.delete(`http://localhost:3000/employees/${id}`);
   }
+
+
 }

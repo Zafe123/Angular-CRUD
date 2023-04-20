@@ -29,6 +29,19 @@
       "salary": 25000,
       "userId": "1",
       "id": 1
+    },
+    {
+      "firstName": "Edge",
+      "lastName": "Testing",
+      "email": "edgetesting@gmail.com",
+      "dob": "2023-04-19T16:00:00.000Z",
+      "gender": "male",
+      "education": "Docotorate",
+      "company": "Edge",
+      "experience": "5 years",
+      "salary": 15789,
+      "userId": "2",
+      "id": 2
     }
   ],
   "signupUsers": [

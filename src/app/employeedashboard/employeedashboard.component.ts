@@ -7,6 +7,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-employeedashboard',
@@ -14,6 +16,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./employeedashboard.component.scss']
 })
 export class EmployeedashboardComponent implements OnInit {
+
+
 
   displayedColumns: string[] = [
     'id',
@@ -35,12 +39,26 @@ export class EmployeedashboardComponent implements OnInit {
 
   constructor(
     private _dialog: MatDialog,
-    private _empService: EmployeeService
+    private _empService: EmployeeService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private http: HttpClient
   ) { }
 
+  userFullName: string = '';
 
   ngOnInit(): void {
     this.getEmployeeList();
+
+    const userId = localStorage.getItem('userId');
+    const usersUrl = 'http://localhost:3000/signupUsers';
+
+    this.http.get<any[]>(usersUrl).subscribe(users => {
+      const currentUser = users.find(user => user.id === Number(userId));
+      if (currentUser) {
+        this.userFullName = currentUser.fullname;
+      }
+    });
   }
 
   openAddEditEmpForm() {

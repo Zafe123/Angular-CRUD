@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     })
 
   }
+
   login() {
     this.http.get<any>("http://localhost:3000/signupUsers")
       .subscribe({
@@ -37,9 +38,10 @@ export class LoginComponent implements OnInit {
           });
           if (user) {
             localStorage.setItem('userId', user.id);
-            this.successNotification();
             this.loginForm.reset();
             this.router.navigate(['dashboard'])
+            const welcomeMsg = `Welcome ${user.fullname}!`;
+            this.successNotification(welcomeMsg);
           } else {
             this.userNotification();
           }
@@ -50,8 +52,8 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  successNotification() {
-    Swal.fire('Hi', 'Login Success', 'success');
+  successNotification(welcomeMsg: string) {
+    Swal.fire('Hi', welcomeMsg, 'success');
   }
 
   userNotification() {
