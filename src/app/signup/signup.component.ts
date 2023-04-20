@@ -64,7 +64,9 @@ export class SignupComponent implements OnInit {
       this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
         .subscribe({
           next: (res) => {
-            this.successNotification(); // 
+            const newUserId = res.id; // assuming your JSON server returns the new user ID
+            localStorage.setItem('userId', newUserId);
+            this.successNotification();
             this.signupForm.reset();
             this.formSubmitted = false;
             this.router.navigate(['login']);

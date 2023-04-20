@@ -18,74 +18,33 @@
   },
   "employees": [
     {
-      "firstName": "Gustavo Testing",
-      "lastName": "Fring",
-      "email": "gusfring@gmail.com",
+      "firstName": "Opera ",
+      "lastName": "GX",
+      "email": "opera@gmail.com",
       "dob": "2023-03-31T16:00:00.000Z",
       "gender": "male",
-      "education": "High-school",
-      "company": "Los pollos",
-      "experience": "20 years",
-      "salary": 1,
+      "education": "Docotorate",
+      "company": "Opera",
+      "experience": "3 Months",
+      "salary": 25000,
+      "userId": "1",
       "id": 1
     }
   ],
   "signupUsers": [
     {
-      "fullname": "John Doe",
-      "email": "pat@example.com",
+      "fullname": "Opera GX",
+      "email": "OperaGX@gmail.com",
       "password": "12345",
       "confirmpassword": "12345",
       "id": 1
     },
     {
-      "fullname": "John Doe",
-      "email": "johndoe@gmail.com",
+      "fullname": "Edge",
+      "email": "edge@gmail.com",
       "password": "12345",
       "confirmpassword": "12345",
       "id": 2
-    },
-    {
-      "fullname": "Testing Account",
-      "email": "testing@gmail.com",
-      "password": "12345",
-      "confirmpassword": "12345",
-      "id": 3
-    },
-    {
-      "fullname": "Joshua ",
-      "email": "pat@gmail.com",
-      "password": "testing",
-      "confirmpassword": "testing",
-      "id": 4
-    },
-    {
-      "fullname": "John",
-      "email": "john@gmail.com",
-      "password": "12345",
-      "confirmpassword": "12345",
-      "id": 5
-    },
-    {
-      "fullname": "Joshua",
-      "email": "123@gmail.com",
-      "password": "123",
-      "confirmpassword": "123",
-      "id": 6
-    },
-    {
-      "fullname": "joshua",
-      "email": "testing@gmail.com",
-      "password": "123",
-      "confirmpassword": "123",
-      "id": 7
-    },
-    {
-      "fullname": "Joshua",
-      "email": "testing@yahoo.com",
-      "password": "12345",
-      "confirmpassword": "12345",
-      "id": 8
     }
   ]
 }

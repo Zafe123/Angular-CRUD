@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
     })
 
   }
-
   login() {
     this.http.get<any>("http://localhost:3000/signupUsers")
       .subscribe({
@@ -37,6 +36,7 @@ export class LoginComponent implements OnInit {
             return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
           });
           if (user) {
+            localStorage.setItem('userId', user.id);
             this.successNotification();
             this.loginForm.reset();
             this.router.navigate(['dashboard'])
