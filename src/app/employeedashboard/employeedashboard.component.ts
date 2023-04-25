@@ -9,6 +9,8 @@ import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ChartData, ChartEvent, ChartType } from 'chart.js';
+
 
 @Component({
   selector: 'app-employeedashboard',
@@ -133,6 +135,27 @@ export class EmployeedashboardComponent implements OnInit {
         Swal.fire('Removed!', 'Employee removed successfully.', 'success');
       }
     });
+  }
+
+  // Doughnut
+  public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  public doughnutChartData: ChartData<'doughnut'> = {
+    labels: this.doughnutChartLabels,
+    datasets: [
+      { data: [350, 450, 100] },
+      { data: [50, 150, 120] },
+      { data: [250, 130, 70] }
+    ]
+  };
+  public doughnutChartType: ChartType = 'doughnut';
+
+  // events
+  public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
+    console.log(event, active);
   }
 
 }

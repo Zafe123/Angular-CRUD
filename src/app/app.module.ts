@@ -27,7 +27,7 @@ import { EmployeedashboardComponent } from './employeedashboard/employeedashboar
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -72,7 +72,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     NgConfirmModule,
     MatCardModule,
     MatDividerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
