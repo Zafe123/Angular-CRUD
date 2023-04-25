@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { EmpAddEditComponent } from '../../app/emp-add-edit/emp-add-edit.component';
 import { EmployeeService } from '../../app/services/employee.service';
 import { OnInit } from '@angular/core';
@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 
 @Component({
@@ -19,9 +20,14 @@ import { BaseChartDirective } from 'ng2-charts';
   templateUrl: './employeedashboard.component.html',
   styleUrls: ['./employeedashboard.component.scss']
 })
-export class EmployeedashboardComponent implements OnInit {
+export class EmployeedashboardComponent implements OnInit, OnDestroy {
+
+  mobileQuery: MediaQueryList;
 
 
+
+
+  private _mobileQueryListener: () => void;
 
   displayedColumns: string[] = [
     'id',
@@ -42,12 +48,25 @@ export class EmployeedashboardComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher,
     private _dialog: MatDialog,
     private _empService: EmployeeService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private http: HttpClient
-  ) { }
+  ) {
+
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+
+  }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
 
   userFullName: string = '';
 
@@ -175,5 +194,7 @@ export class EmployeedashboardComponent implements OnInit {
   public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
     console.log(event, active);
   }
+
+
 
 }

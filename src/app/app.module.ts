@@ -28,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgChartsModule } from 'ng2-charts';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -73,7 +74,9 @@ import { NgChartsModule } from 'ng2-charts';
     MatCardModule,
     MatDividerModule,
     MatProgressBarModule,
-    NgChartsModule
+    NgChartsModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
