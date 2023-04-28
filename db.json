@@ -42,6 +42,32 @@
       "salary": 15789,
       "userId": "2",
       "id": 2
+    },
+    {
+      "firstName": "sadsa",
+      "lastName": "dsadsad",
+      "email": "aasdasd@gmail.com",
+      "dob": "2023-04-12T16:00:00.000Z",
+      "gender": "male",
+      "education": "Masterals",
+      "company": "213123",
+      "experience": "2123",
+      "salary": 21113,
+      "userId": "2",
+      "id": 3
+    },
+    {
+      "firstName": "aaaaaaaaaa",
+      "lastName": "aaaaaaaaa",
+      "email": "aaaaaa@gmail.com",
+      "dob": "2023-04-01T16:00:00.000Z",
+      "gender": "male",
+      "education": "Vocational",
+      "company": "123123",
+      "experience": "12 years",
+      "salary": 123123,
+      "userId": "1",
+      "id": 4
     }
   ],
   "signupUsers": [

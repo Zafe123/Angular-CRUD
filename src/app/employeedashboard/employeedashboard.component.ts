@@ -9,9 +9,6 @@ import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import DatalabelsPlugin from 'chartjs-plugin-datalabels';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
 import { MediaMatcher } from '@angular/cdk/layout';
 
 
@@ -52,8 +49,6 @@ export class EmployeedashboardComponent implements OnInit, OnDestroy {
     private media: MediaMatcher,
     private _dialog: MatDialog,
     private _empService: EmployeeService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
     private http: HttpClient
   ) {
 
@@ -158,42 +153,7 @@ export class EmployeedashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
-  // Pie
-  public pieChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: 'top',
-      },
-      datalabels: {
-        formatter: (value, ctx) => {
-          if (ctx.chart.data.labels) {
-            return ctx.chart.data.labels[ctx.dataIndex];
-          }
-        },
-      },
-    }
-  };
-  public pieChartData: ChartData<'pie', number[], string | string[]> = {
-    labels: [['Added Employees', ''], ['Deleted Employees', '', '']],
-    datasets: [{
-      data: [300, 500]
-    }]
-  };
-  public pieChartType: ChartType = 'pie';
-  public pieChartPlugins = [DatalabelsPlugin];
-
-  // events
-  public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
 
 
 
