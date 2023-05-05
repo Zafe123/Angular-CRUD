@@ -1,13 +1,11 @@
-import { Component, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { EmpAddEditComponent } from '../../app/emp-add-edit/emp-add-edit.component';
 import { EmployeeService } from '../../app/services/employee.service';
-import { OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
-import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MediaMatcher } from '@angular/cdk/layout';
 
