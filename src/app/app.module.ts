@@ -30,7 +30,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgChartsModule } from 'ng2-charts';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -40,8 +39,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     EmpAddEditComponent,
     LoginComponent,
     SignupComponent,
-    EmployeedashboardComponent,
-    SidebarComponent
+    EmployeedashboardComponent
   ],
   imports: [
     BrowserModule,

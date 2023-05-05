@@ -68,6 +68,19 @@
       "salary": 123123,
       "userId": "1",
       "id": 4
+    },
+    {
+      "firstName": "Baiw ",
+      "lastName": "Nexttime",
+      "email": "asdas@gmail.com",
+      "dob": "2023-05-04T16:00:00.000Z",
+      "gender": "male",
+      "education": "High-school",
+      "company": "123123",
+      "experience": "123123",
+      "salary": 123123123,
+      "userId": "2",
+      "id": 5
     }
   ],
   "signupUsers": [
