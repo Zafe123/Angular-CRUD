@@ -49,7 +49,8 @@ export class UserinfoComponent implements OnInit {
     this.userinfoForm = this._formBuilder.group({
       fullname: [''],
       email: [''],
-      password: [''],
+      currentpassword: [''],
+      newpassword: [''],
       confirmpassword: ['']
     }, {
       validators: matchpassword

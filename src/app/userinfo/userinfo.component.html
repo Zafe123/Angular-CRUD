@@ -12,8 +12,8 @@
                 <h3 class="userheading">{{ userEmail }}</h3>
                 <h2 class="userheading">Password</h2>
                 <mat-form-field appearance="outline">
-                    <input type="password" formControlName="currentPassword" required matInput
-                        [type]="hidecurrent ? 'password' : 'text'" [value]="userPassword" [disabled]="isDisabled">
+                    <input type="password" required matInput [type]="hidecurrent ? 'password' : 'text'"
+                        [value]="userPassword" [disabled]="isDisabled">
                     <button type="button" mat-icon-button matSuffix (click)="hidecurrent = !hidecurrent"
                         [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidecurrent">
                         <mat-icon>{{hidecurrent ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -46,7 +46,7 @@
             <h2 class="usereditheading">Current Password</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your current password</mat-label>
-                <input type="password" formControlName="password" required matInput
+                <input type="password" formControlName="currentpassword" required matInput
                     [type]="hideditcurrent ? 'password' : 'text'">
                 <button type="button" mat-icon-button matSuffix (click)="hideditcurrent = !hideditcurrent"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideditcurrent">
@@ -57,7 +57,7 @@
             <h2 class="usereditheading">New Password</h2>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your new password</mat-label>
-                <input type="password" formControlName="password" required matInput
+                <input type="password" formControlName="newpassword" required matInput
                     [type]="hideditnew ? 'password' : 'text'">
                 <button type="button" mat-icon-button matSuffix (click)="hideditnew = !hideditnew"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideditnew">
