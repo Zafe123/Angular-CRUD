@@ -42,6 +42,19 @@
       "salary": 123123,
       "userId": "1",
       "id": 4
+    },
+    {
+      "firstName": "Nav",
+      "lastName": "bar",
+      "email": "navbar@gmail.com",
+      "dob": "2023-05-05T16:00:00.000Z",
+      "gender": "male",
+      "education": "High-school",
+      "company": "Navbar",
+      "experience": "2 WEEKS",
+      "salary": 25000,
+      "userId": "2",
+      "id": 5
     }
   ],
   "signupUsers": [
