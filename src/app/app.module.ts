@@ -30,6 +30,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgChartsModule } from 'ng2-charts';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { NavbarComponent } from './navbar/navbar.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { AppLayoutComponent } from './app-layout/app-layout.component';
 
 
 
@@ -39,7 +42,10 @@ import { MatListModule } from '@angular/material/list';
     EmpAddEditComponent,
     LoginComponent,
     SignupComponent,
-    EmployeedashboardComponent
+    EmployeedashboardComponent,
+    NavbarComponent,
+    UserinfoComponent,
+    AppLayoutComponent
   ],
   imports: [
     BrowserModule,

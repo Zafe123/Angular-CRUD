@@ -31,32 +31,6 @@
       "id": 1
     },
     {
-      "firstName": "Edge",
-      "lastName": "Testing",
-      "email": "edgetesting@gmail.com",
-      "dob": "2023-04-19T16:00:00.000Z",
-      "gender": "male",
-      "education": "Docotorate",
-      "company": "Edge",
-      "experience": "5 years",
-      "salary": 15789,
-      "userId": "2",
-      "id": 2
-    },
-    {
-      "firstName": "sadsa",
-      "lastName": "dsadsad",
-      "email": "aasdasd@gmail.com",
-      "dob": "2023-04-12T16:00:00.000Z",
-      "gender": "male",
-      "education": "Masterals",
-      "company": "213123",
-      "experience": "2123",
-      "salary": 21113,
-      "userId": "2",
-      "id": 3
-    },
-    {
       "firstName": "aaaaaaaaaa",
       "lastName": "aaaaaaaaa",
       "email": "aaaaaa@gmail.com",
@@ -68,19 +42,6 @@
       "salary": 123123,
       "userId": "1",
       "id": 4
-    },
-    {
-      "firstName": "Baiw ",
-      "lastName": "Nexttime",
-      "email": "asdas@gmail.com",
-      "dob": "2023-05-04T16:00:00.000Z",
-      "gender": "male",
-      "education": "High-school",
-      "company": "123123",
-      "experience": "123123",
-      "salary": 123123123,
-      "userId": "2",
-      "id": 5
     }
   ],
   "signupUsers": [
