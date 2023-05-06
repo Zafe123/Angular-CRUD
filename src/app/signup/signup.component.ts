@@ -13,6 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class SignupComponent implements OnInit {
 
+  hide = true;
+
   public signupForm!: FormGroup;
   public formSubmitted = false;
 
@@ -37,7 +39,7 @@ export class SignupComponent implements OnInit {
     })
 
   }
-  hide = true;
+
 
 
 
@@ -64,7 +66,7 @@ export class SignupComponent implements OnInit {
       this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
         .subscribe({
           next: (res) => {
-            const newUserId = res.id; // assuming your JSON server returns the new user ID
+            const newUserId = res.id;
             localStorage.setItem('userId', newUserId);
             this.successNotification();
             this.signupForm.reset();

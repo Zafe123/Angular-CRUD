@@ -1,6 +1,21 @@
-.example-card {
+.userbody {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.userinfo {
     max-width: 400px;
-    margin: 100px auto 0;
+    margin: 100px;
+    max-height: 400px;
+    flex-basis: calc(50% - 20px);
+
+}
+
+.userinfoedit {
+
+    margin: 100px;
+    flex-basis: calc(50% - 20px);
 
 }
 
@@ -17,7 +32,11 @@
 }
 
 
-.email {
+.userheading {
+    margin-left: 20px;
+}
+
+.usereditheading {
     margin-left: 20px;
 }
 

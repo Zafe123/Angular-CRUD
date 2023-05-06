@@ -1,16 +1,78 @@
-<mat-card class="example-card">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <h1 class="user">USER INFO</h1>
-    </mat-card-header>
-    <form>
-        <div class="example-container">
+<div class="userbody">
+    <mat-card class="userinfo">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <h1 class="user">USER INFO</h1>
+        </mat-card-header>
+        <form>
+            <div class="example-container">
+                <h2 class="userheading ">Full Name</h2>
+                <h3 class="userheading ">{{ userFullName }}
+                </h3>
+                <h2 class="userheading ">Email</h2>
+                <h3 class="userheading ">{{ userFullName }}
+                </h3>
+                <h2 class="userheading ">Password</h2>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your email</mat-label>
+                    <input type="password" formControlName="password" required matInput
+                        [type]="hide ? 'password' : 'text'">
+                    <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-card>
+
+    <mat-card class="userinfoedit">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <h1 class="user">EDIT USER INFO</h1>
+        </mat-card-header>
+        <form [formGroup]="userinfoForm" (ngSubmit)="userinfo()">
+            <div class="example-container">
+                <h2 class="usereditheading">Full Name</h2>
+                <mat-form-field appearance="outline">
+                    <mat-label>Full Name</mat-label>
+                    <input formControlName="fullname" matInput type="text" placeholder="Ex. John Doe" required>
+                </mat-form-field>
+                <h2 class="usereditheading">Email</h2>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your email</mat-label>
+                    <input formControlName="email" matInput placeholder="pat@example.com" [email]="true" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <h2 class="usereditheading">Password</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input type="password" formControlName="password" required matInput [type]="hide ? 'password' : 'text'">
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <h2 class="usereditheading"> Confirm Password</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm your password</mat-label>
+                <input type="password" formControlName="confirmpassword" required matInput
+                    [type]="hide ? 'password' : 'text'">
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="confirmpassword.invalid">{{getpasswordErrorMessage()}}</mat-error>
+            </mat-form-field>
 
 
-        </div>
-        <mat-card-actions class="buttons">
-            <button mat-stroked-button color="primary" type="button">Update</button>
-            <button mat-stroked-button color="warn" class="clear" type="reset">Clear</button>
-        </mat-card-actions>
-    </form>
-</mat-card>
+            <mat-card-actions class="buttons">
+                <button mat-stroked-button color="primary" type="button">Update</button>
+                <button mat-stroked-button color="warn" class="clear" type="reset">Clear</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>
