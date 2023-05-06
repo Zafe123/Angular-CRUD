@@ -13,12 +13,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserinfoComponent implements OnInit {
 
+
+
   hide = true;
+  hidecurrent = true;
+  hideditcurrent = true;
+  hideditnew = true;
+  isDisabled = true;
 
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl(null, [Validators.required]);
   confirmpassword = new FormControl(null, [Validators.required]);
   userFullName: string = '';
+  userEmail: string = '';
+  userPassword: string = '';
 
   public userinfoForm!: FormGroup;
   public formSubmitted = false;
@@ -31,6 +39,8 @@ export class UserinfoComponent implements OnInit {
       const currentUser = users.find(user => user.id === Number(userId));
       if (currentUser) {
         this.userFullName = currentUser.fullname;
+        this.userEmail = currentUser.email;
+        this.userPassword = currentUser.password;
       }
     });
   }

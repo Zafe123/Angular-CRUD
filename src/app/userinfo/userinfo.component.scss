@@ -3,6 +3,10 @@
     justify-content: space-evenly;
 }
 
+input:disabled {
+    color: black;
+}
+
 
 .userinfo {
     max-width: 400px;
@@ -16,7 +20,6 @@
 
     margin: 100px;
     flex-basis: calc(50% - 20px);
-
 }
 
 .example-header-image {
