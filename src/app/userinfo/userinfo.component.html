@@ -28,7 +28,7 @@
             <div mat-card-avatar class="example-header-image"></div>
             <h1 class="user">EDIT USER INFO</h1>
         </mat-card-header>
-        <form [formGroup]="userinfoForm" (ngSubmit)="userinfo()">
+        <form [formGroup]="userinfoForm" (ngSubmit)="updateUser()">
             <div class="example-container">
                 <h2 class="usereditheading">Full Name</h2>
                 <mat-form-field appearance="outline">
@@ -43,16 +43,6 @@
                 </mat-form-field>
             </div>
 
-            <h2 class="usereditheading">Current Password</h2>
-            <mat-form-field appearance="outline">
-                <mat-label>Enter your current password</mat-label>
-                <input type="password" formControlName="currentpassword" required matInput
-                    [type]="hideditcurrent ? 'password' : 'text'">
-                <button type="button" mat-icon-button matSuffix (click)="hideditcurrent = !hideditcurrent"
-                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideditcurrent">
-                    <mat-icon>{{hideditcurrent ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-            </mat-form-field>
 
             <h2 class="usereditheading">New Password</h2>
             <mat-form-field appearance="outline">
@@ -79,8 +69,7 @@
 
 
             <mat-card-actions class="buttons">
-                <button mat-stroked-button color="primary" type="button"
-                    [disabled]="userinfoForm.invalid">Update</button>
+                <button mat-stroked-button color="primary" type="submit" [disabled]="isDisabled">Update</button>
                 <button mat-stroked-button color="warn" class="clear" type="reset">Clear</button>
             </mat-card-actions>
         </form>
