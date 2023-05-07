@@ -80,24 +80,12 @@ export class UserinfoComponent implements OnInit {
     if (this.userinfoForm.valid) {
       const userId = localStorage.getItem('userId');
       const usersUrl = 'http://localhost:3000/signupUsers';
-      // Get the current user's information from the server
       this.http.get(usersUrl + '/' + userId).subscribe((currentUser: any) => {
-        // Get the current password entered by the user
-        const currentPassword = this.userinfoForm.get('currentpassword')?.value;
-        // Compare the current password entered by the user with the current password stored in the server
-        if (currentPassword !== currentUser.password) {
-          // Display an error message or handle the error
-          return;
-        }
-        // Get the new password and the confirm new password fields
         const newPassword = this.userinfoForm.get('newpassword')?.value;
         const confirmNewPassword = this.userinfoForm.get('confirmpassword')?.value;
-        // Check if the new password and the confirm new password fields match
         if (newPassword !== confirmNewPassword) {
-          // Display an error message or handle the error
           return;
         }
-        // Update the user's information in the server with the new password
         const updatedUser = {
           id: userId,
           fullname: this.userinfoForm.get('fullname')?.value,
@@ -105,7 +93,9 @@ export class UserinfoComponent implements OnInit {
           password: newPassword
         };
         this.http.put(usersUrl + '/' + userId, updatedUser).subscribe(response => {
-          // Display a success message or handle the success
+          Swal.fire('Success', 'User information updated successfully', 'success').then(() => {
+            window.location.reload();
+          });
         });
       });
     }
