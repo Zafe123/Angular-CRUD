@@ -90,7 +90,8 @@ export class UserinfoComponent implements OnInit {
           id: userId,
           fullname: this.userinfoForm.get('fullname')?.value,
           email: this.userinfoForm.get('email')?.value,
-          password: newPassword
+          password: newPassword,
+          confirmpassword: confirmNewPassword
         };
         this.http.put(usersUrl + '/' + userId, updatedUser).subscribe(response => {
           Swal.fire('Success', 'User information updated successfully', 'success').then(() => {

@@ -23,7 +23,7 @@
             </mat-form-field>
         </div>
         <mat-card-actions class="buttons">
-            <button mat-stroked-button color="primary" type="submit">Login</button>
+            <button mat-stroked-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
             <a routerLink="/signup" class="register">
                 <button mat-stroked-button color="warn" class="clear" type="button">Register</button>
             </a>

@@ -30,18 +30,23 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    const userEmail = this.loginForm.value.email;
+    const userPassword = this.loginForm.value.password;
+
     this.http.get<any>("http://localhost:3000/signupUsers")
       .subscribe({
         next: (res) => {
           const user = res.find((a: any) => {
-            return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+            return a.email === userEmail;
           });
-          if (user) {
+          if (user && user.password === userPassword) {
             localStorage.setItem('userId', user.id);
             this.loginForm.reset();
             this.router.navigate(['dashboard'])
             const welcomeMsg = `Welcome ${user.fullname}!`;
             this.successNotification(welcomeMsg);
+          } else if (user && user.password !== userPassword) {
+            this.passwordNotification();
           } else {
             this.userNotification();
           }
@@ -54,6 +59,14 @@ export class LoginComponent implements OnInit {
 
   successNotification(welcomeMsg: string) {
     Swal.fire('Hi', welcomeMsg, 'success');
+  }
+
+  passwordNotification() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Incorrect Password',
+      text: 'Please Try again',
+    })
   }
 
   userNotification() {

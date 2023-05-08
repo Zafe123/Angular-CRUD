@@ -60,16 +60,17 @@
   "signupUsers": [
     {
       "id": 1,
-      "fullname": "Testing",
-      "email": "testing@gmail.com",
-      "password": "1234567890"
+      "fullname": "Opera GX",
+      "email": "operagx@gmail.com",
+      "password": "1234567890",
+      "confirmpassword": "1234567890"
     },
     {
-      "fullname": "Edge",
+      "id": 2,
+      "fullname": "Edge name",
       "email": "edge@gmail.com",
       "password": "12345",
-      "confirmpassword": "12345",
-      "id": 2
+      "confirmpassword": "12345"
     }
   ]
 }
