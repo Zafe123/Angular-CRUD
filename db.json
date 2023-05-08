@@ -18,10 +18,10 @@
   },
   "employees": [
     {
-      "firstName": "Opera ",
-      "lastName": "GX",
+      "firstName": "Opera EDIT",
+      "lastName": "GX EDIT",
       "email": "opera@gmail.com",
-      "dob": "2023-03-31T16:00:00.000Z",
+      "dob": "2023-04-18T16:00:00.000Z",
       "gender": "male",
       "education": "Docotorate",
       "company": "Opera",
@@ -60,7 +60,7 @@
   "signupUsers": [
     {
       "id": 1,
-      "fullname": "TESTING REFRESH",
+      "fullname": "Testing",
       "email": "testing@gmail.com",
       "password": "1234567890"
     },
