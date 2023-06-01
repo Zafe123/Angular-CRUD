@@ -73,7 +73,9 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
     MatProgressBarModule,
     NgChartsModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
